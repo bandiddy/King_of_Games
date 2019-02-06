@@ -1,0 +1,25 @@
+{
+  "name": "King_of_Games",
+  "version": "1.0.0",
+  "description": "virtual arcade to find the king",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bandiddy/King_of_Games.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bandiddy/King_of_Games/issues"
+  },
+  "homepage": "https://github.com/bandiddy/King_of_Games#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql": "^2.16.0"
+  }
+}

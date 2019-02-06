@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS gameking_db;
+CREATE DATABASE gameking_db;
