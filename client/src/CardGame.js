@@ -9,7 +9,7 @@ class CardGame extends PureComponent {
 
   state = { 
     isFlipped: Array(16).fill(false),
-    shuffledCard: App.duplicateCard().sort(() => Math.random() - 0.5),
+    shuffledCard: CardGame.duplicateCard().sort(() => Math.random() - 0.5),
     clickCount: 1,
     prevSelectedCard: -1,
     prevCardId: -1
@@ -71,7 +71,7 @@ class CardGame extends PureComponent {
   restartGame = () => {
     this.setState({
       isFlipped: Array(16).fill(false),
-      shuffledCard: App.duplicateCard().sort(() => Math.random() - 0.5),
+      shuffledCard: CardGame.duplicateCard().sort(() => Math.random() - 0.5),
       clickCount: 1,
       prevSelectedCard: -1,
       prevCardId: -1
