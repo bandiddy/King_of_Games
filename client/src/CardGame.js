@@ -5,7 +5,7 @@ import GameOver from './components/card/GameOver';
 
 import './styles/main.css';
 
-class App extends PureComponent {
+class CardGame extends PureComponent {
 
   state = { 
     isFlipped: Array(16).fill(false),
@@ -106,4 +106,4 @@ class App extends PureComponent {
   }
 }
 
-export default App;
+export default CardGame;
