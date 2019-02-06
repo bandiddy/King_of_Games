@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import Header from './components/header/Header';
+import CardHeader from './components/header/Header';
 import Card from './components/card/Card';
 import GameOver from './components/card/GameOver';
 
@@ -85,7 +85,7 @@ class CardGame extends PureComponent {
   render() {
     return (
      <div>
-       <Header restartGame={this.restartGame} />
+       <CardHeader restartGame={this.restartGame} />
        { this.isGameOver() ? <GameOver restartGame={this.restartGame} /> :
        <div className="grid-container">
           {
