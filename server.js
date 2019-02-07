@@ -14,7 +14,7 @@ const app = express();
 app.get('/posts', function (req, res) {
     connection.connect();
 
-    connection.query('SELECT user_id (snake+asteroids+racecar) AS Total from score Order by total DESC', function (error, results, fields) {
+    connection.query('SELECT user_id (snake+asteroids+racecar) AS Total from scores Order by total DESC', function (error, results, fields) {
       if (error) throw error;
       res.send(results)
     });
