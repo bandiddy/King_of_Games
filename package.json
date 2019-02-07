@@ -20,6 +20,7 @@
   "homepage": "https://github.com/bandiddy/King_of_Games#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "mysql": "^2.16.0"
+    "mysql": "^2.16.0",
+    "phaser": "^3.16.1"
   }
 }

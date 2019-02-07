@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require("path");
 const bodyParser = require('body-parser');
 const mysql      = require('mysql');
 const connection = mysql.createConnection({
@@ -8,6 +9,9 @@ const connection = mysql.createConnection({
   database : 'gameking_db'
 });
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static("public"));
 
 const app = express();
 
