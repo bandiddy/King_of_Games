@@ -1,33 +1,37 @@
 const db = require("../models");
 
 module.exports = {
-  findAll: function(req, res) {
+  findAll: function (req, res) {
     db.Score
-      .findAll()
+      .findAll({
+        order: [
+          ['score', 'DESC'],
+        ],
+      })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findById: function(req, res) {
+  findById: function (req, res) {
     db.Score
-      .findOne({where: {id:req.params.id}})
+      .findOne({ where: { id: req.params.id } })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  create: function(req, res) {
+  create: function (req, res) {
     db.Score
       .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  update: function(req, res) {
+  update: function (req, res) {
     db.Score
-      .update(req.body, {id: req.params.id })
+      .update(req.body, { id: req.params.id })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  remove: function(req, res) {
+  remove: function (req, res) {
     db.Score
-      .destroy({where: {id: req.params.id }})
+      .destroy({ where: { id: req.params.id } })
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
