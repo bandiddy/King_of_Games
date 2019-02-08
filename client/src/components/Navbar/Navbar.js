@@ -9,19 +9,17 @@ const Navbar = () => (
       Home
     </Link>
     <Link
-      to="/"
-      className={
-        window.location.pathname === "/" || window.location.pathname === "/asteroids"
-          ? "nav-link active"
-          : "nav-link"
-      }
-    >
-      ASTEROIDS
-          </Link>
+        to="/asteroids"
+        className={
+          window.location.pathname === "/asteroids" ? "nav-link active" : "nav-link"
+        }
+      >
+       ASTEROIDS
+      </Link>
           <Link
-      to="/"
+      to="/snake"
       className={
-        window.location.pathname === "/" || window.location.pathname === "/snake"
+        window.location.pathname === "/snake" 
           ? "nav-link active"
           : "nav-link"
       }
@@ -29,9 +27,9 @@ const Navbar = () => (
       SNAKE
           </Link>
           <Link
-      to="/"
+      to="/towerdefense"
       className={
-        window.location.pathname === "/" || window.location.pathname === "/towerdefense"
+        window.location.pathname === "/towerdefense" 
           ? "nav-link active"
           : "nav-link"
       }
@@ -39,9 +37,9 @@ const Navbar = () => (
       TOWER DEFENSE
           </Link>
           <Link
-      to="/"
+      to="/racecar"
       className={
-        window.location.pathname === "/" || window.location.pathname === "/racecar"
+        window.location.pathname === "/racecar" 
           ? "nav-link active"
           : "nav-link"
       }
@@ -49,9 +47,9 @@ const Navbar = () => (
       RACE CAR
           </Link>
           <Link
-      to="/"
+      to="/topscore"
       className={
-        window.location.pathname === "/" || window.location.pathname === "/topscore"
+         window.location.pathname === "/topscore"
           ? "nav-link active"
           : "nav-link"
       }

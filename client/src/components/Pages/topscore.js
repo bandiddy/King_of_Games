@@ -2,7 +2,7 @@ import React from "react";
 
 const Topscore = () => (
     <div>
-    <h1>Snake</h1>
+    <h1>Top Score</h1>
     <p>
     
 </p>
