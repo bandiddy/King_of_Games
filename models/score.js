@@ -10,13 +10,20 @@ module.exports = function(sequelize, DataTypes) {
     score: {
       type: DataTypes.INTEGER,
       allowNull: false,
+    },
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
     }
   });
 
   Score.associate = function(models) {
     Score.belongsTo(models.User, {
       foreignKey: {
-        allowNull: false
+        allowNull: true
       }
     });
   };
