@@ -3,14 +3,10 @@ import "./GameInfo.css";
 
 function GameInfo(props) {
     return (
-
-        <div className="GameInfo">
-            <img className="gamelink"
-                a={props.game.link}
-                src={props.game.src}
-                alt={props.game.alt}
-            />
+        <div className="img-container">
+            <img alt={props.name} src={props.image} />
         </div>
     )
 };
+
 export default GameInfo
