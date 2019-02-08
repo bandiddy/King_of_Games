@@ -1,1 +1,1 @@
-export {default} from "./GameTopScore";
+export { default } from "./GameCard";
