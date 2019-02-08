@@ -1,27 +1,21 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const mysql      = require('mysql');
-const connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'root',
-  database : 'gameking_db'
-});
-
+const express = require("express");
+const routes = require("./routes");
+const db = require("./models");
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
-app.get('/posts', function (req, res) {
-    connection.connect();
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
-    connection.query('SELECT user_id (snake+asteroids+racecar) AS Total from scores Order by total DESC', function (error, results, fields) {
-      if (error) throw error;
-      res.send(results)
-    });
+app.use(routes);
 
-    connection.end();
-});
 
-app.listen(3000, () => {
- console.log('Go to http://localhost:3000/posts to see posts');
+db.sequelize.sync({ force: true }).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });
