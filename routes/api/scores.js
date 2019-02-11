@@ -5,8 +5,10 @@ router.route("/")
   .get(scoresController.findAll)
   .post(scoresController.create);
 
-router
-  .route("/:id")
+router.route("/scores/:game")
+  .get(scoresController.findAllByGame)
+  
+router.route("/:id")
   .get(scoresController.findById)
   .put(scoresController.update)
   .delete(scoresController.remove);

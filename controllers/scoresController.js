@@ -7,21 +7,9 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findAllSnake: function(req, res) {
+  findAllByGame: function(req, res) {
     db.Score
-      .findAll({where: {game: "Snake"}})
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  findAllBreakout: function(req, res) {
-    db.Score
-      .findAll({where: {game: "Breakout"}})
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  findAllRacer: function(req, res) {
-    db.Score
-      .findAll({where: {game: "Racer"}})
+      .findAll({where: {game:req.params.game}})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
