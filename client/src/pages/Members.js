@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
 import Header from './components/Header/header';
 import Footer from './components/Footer/Footer';
 // import Container from './components/Container/container'
@@ -13,7 +13,6 @@ import Asteroids from "./components/Pages/asteroids"
 import Tower from "./components/Pages/towerdefense"
 import Racecar from "./components/Pages/racecar"
 import Topscore from "./components/Pages/topscore"
-import Login from "./components/Login"
 
 class App extends Component {
 
@@ -26,7 +25,7 @@ class App extends Component {
      <div>
 <Header />
 <Navbar />
-<Route exact path="/" component={Login}/>
+<Route exact path="/" />
 <Route exact path="/asteroids"  component={Asteroids} />
 <Route exact path="/snake" component={Snake}/>
 <Route exact path="/towerdefense" component={Tower}/>
