@@ -9,4 +9,5 @@ function GameInfo(props) {
         </div>
     )
 };
+
 export default GameInfo
