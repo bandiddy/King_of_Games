@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/header/header';
 import Footer from './components/Footer/Footer';
-// import Container from './components/Container/container'
+import Container from './components/Container/container'
 import GameCard from './components/GameCard/GameCard'
 import Navbar from './components/Navbar/Navbar'
 import games from "./games.json";
@@ -13,7 +13,7 @@ import Breakout from "./components/Pages/breakout"
 import Tower from "./components/Pages/towerdefense"
 import Racecar from "./components/Pages/racecar"
 import Topscore from "./components/Pages/topscore"
-// import GameInfo from "./components/GameInfo"
+import GameInfo from "./components/GameInfo"
 class App extends Component {
 
   state = {
