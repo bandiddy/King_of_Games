@@ -14,18 +14,19 @@ app.use(express.json());
 app.use(express.static("public"));
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
-app.get('/posts', function (req, res) {
-    connection.connect();
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
-    connection.query('SELECT * FROM posts LIMIT 0, 10', function (error, results, fields) {
-      if (error) throw error;
-      res.send(results)
-    });
+app.use(routes);
 
-    connection.end();
-});
 
-app.listen(3000, () => {
- console.log('Go to http://localhost:3000/posts to see posts');
+db.sequelize.sync({ force: true }).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });
