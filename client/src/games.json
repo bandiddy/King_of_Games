@@ -2,13 +2,13 @@
   {
     "id": 1,
     "name": "Snake",
-    "image": "http://pngimg.com/uploads/snake/snake_PNG4045.png"
+    "image": "https://www.soom.cz/data/FAIB/images/snake.png"
     
   },
   {
     "id": 2,
-    "name": "Asteroids",
-    "image": "https://banner2.kisspng.com/20180610/aow/kisspng-asteroids-meteoroids-meteorite-rock-asteroid-storm-free-5b1dc4e070bec6.7904689615286776004618.jpg"
+    "name": "Breakout",
+    "image": "https://cdn2.iconfinder.com/data/icons/gaming-color-icons/104/16-gaming-breakout-game-retro-arcade-512.png"
   },
   {
     "id": 3,
@@ -17,7 +17,13 @@
   },
   {
     "id": 4,
-    "name": "Race Car",
-    "image": "https://i.kisscc0.com/20180730/uqw/kisscc0-formula-one-car-honda-motor-company-formula-1-form-red-honda-formula-lite-car-5b5f5e7fcdbfb2.6612907315329767678428.jpg"
+    "name": "Racer",
+    "image": "http://www.transparentpng.com/download/need-for-speed/wz0SmV-need-for-speed-png.png"
+  },
+  {
+  "id": 5,
+    "name": "King",
+    "image": "./images/kingofgames.png"
   }
-]
+  ]
+

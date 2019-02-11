@@ -9,7 +9,7 @@ import games from "./games.json";
 import Wrapper from "./components/Wrapper/Wrapper"
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Snake from "./components/Pages/snake"
-import Asteroids from "./components/Pages/asteroids"
+import Breakout from "./components/Pages/breakout"
 import Tower from "./components/Pages/towerdefense"
 import Racecar from "./components/Pages/racecar"
 import Topscore from "./components/Pages/topscore"
@@ -26,7 +26,7 @@ class App extends Component {
 <Header />
 <Navbar />
 <Route exact path="/" />
-<Route exact path="/asteroids"  component={Asteroids} />
+<Route exact path="/breakout"  component={Breakout} />
 <Route exact path="/snake" component={Snake}/>
 <Route exact path="/towerdefense" component={Tower}/>
 <Route exact path="/racecar" component={Racecar}/>

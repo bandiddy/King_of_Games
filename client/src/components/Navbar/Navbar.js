@@ -9,12 +9,12 @@ const Navbar = () => (
       Home
     </Link>
     <Link
-        to="/asteroids"
+        to="/breakout"
         className={
-          window.location.pathname === "/asteroids" ? "nav-link active" : "nav-link"
+          window.location.pathname === "/breakout" ? "nav-link active" : "nav-link"
         }
       >
-       ASTEROIDS
+       BREAKOUT
       </Link>
           <Link
       to="/snake"
@@ -44,7 +44,7 @@ const Navbar = () => (
           : "nav-link"
       }
     >
-      RACE CAR
+      RACER
           </Link>
           <Link
       to="/topscore"
