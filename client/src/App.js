@@ -13,7 +13,7 @@ import Breakout from "./components/Pages/breakout"
 import Tower from "./components/Pages/towerdefense"
 import Racecar from "./components/Pages/racecar"
 import Topscore from "./components/Pages/topscore"
-
+// import GameInfo from "./components/GameInfo"
 class App extends Component {
 
   state = {
