@@ -6,8 +6,8 @@ router.route("/")
   .post(scoresController.create);
 
 router.route("/scores/:game")
-  .get(scoresController.findAllByGame)
-  
+  .get(scoresController.findAllByGame);
+
 router.route("/:id")
   .get(scoresController.findById)
   .put(scoresController.update)

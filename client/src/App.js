@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './components/header/header';
+import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 // import Container from './components/Container/container'
 import GameCard from './components/GameCard/GameCard'
