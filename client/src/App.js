@@ -11,12 +11,10 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Snake from "./components/Pages/snake"
 import Breakout from "./components/Pages/breakout"
 import Tower from "./components/Pages/towerdefense"
-import Racecar from "./components/Pages/racecar"
-// import Topscore from "./components/Pages/topscore"
+import Racer from "./components/Racer"
+import Topscore from "./components/Pages/topscore"
 // import GameInfo from "./components/GameInfo"
-import TopScoreCArd from "./components/TopScoreCard"
-// import Login from "./components/Login"
-import Modal from "./components/Modal/Modal"
+import TopScoreCard from "./components/TopScoreCard/TopScoreCard"
 
 class App extends Component {
 
@@ -46,7 +44,7 @@ class App extends Component {
 
 <Wrapper>
 
-<TopScoreCArd />
+<TopScoreCard />
 {this.state.games.map(game => (
   <GameCard
     id={game.id}

@@ -247,4 +247,3 @@ class Snake extends Component {
 
 
 export default Snake;
-

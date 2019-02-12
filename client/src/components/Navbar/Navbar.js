@@ -9,21 +9,12 @@ const Navbar = () => (
       Home
     </Link>
     <Link
-<<<<<<< HEAD
         to="/breakout"
         className={
           window.location.pathname === "/breakout" ? "nav-link active" : "nav-link"
         }
       >
        BREAKOUT
-=======
-      to="/breakout"
-      className={
-        window.location.pathname === "/asteroids" ? "nav-link active" : "nav-link"
-      }
-    >
-      BREAKOUT
->>>>>>> 450552c1e6a9019f734ea916c12e7c7c92cbdfc0
       </Link>
     <Link
       to="/snake"
@@ -45,10 +36,10 @@ const Navbar = () => (
     >
       TOWER DEFENSE
           </Link>
-    <Link
-      to="/racecar"
+          <Link
+      to="/racer"
       className={
-        window.location.pathname === "/racecar"
+        window.location.pathname === "/racer" 
           ? "nav-link active"
           : "nav-link"
       }
