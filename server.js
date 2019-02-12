@@ -1,13 +1,7 @@
-const express = require('express');
-const path = require("path");
-const bodyParser = require('body-parser');
-const mysql      = require('mysql');
-const connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'root',
-  database : 'gameking_db'
-});
+const express = require("express");
+const routes = require("./routes");
+const db = require("./models");
+const passport = require("./config/passport");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -21,7 +15,8 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(routes);
 
 

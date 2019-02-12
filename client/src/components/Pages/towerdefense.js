@@ -1,11 +1,11 @@
 import React from "react";
 
-const Tower = () => (
+const Towerdefense = () => (
     <div>
-    <h1>Tower Defense</h1>
+    <h1>Tower Defense!</h1>
     <p>
-        <div id="tower"></div>
+    <div id="towerdefense"></div>
 </p>
 </div>
     )
-    export default Tower;
+    export default Towerdefense;
