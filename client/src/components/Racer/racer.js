@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Phaser from 'phaser';
+import API from "../../utils/API";
 import "./Racer.css";
+
        let x = 0;
        let y;
        let player;
@@ -63,15 +65,16 @@ class Racer extends Component {
  
     // Build the Game class
     componentDidMount() {
-       
+        const width = 640;
+        const height = 480;
 
 
         const config = {
             
                 type: Phaser.AUTO,
-                width: 800,
-                height: 600,
-                parent: 'racer',
+                width,
+                height,
+                parent: 'render-game',
                 physics: {
                     default: 'arcade',
                     arcade: {
@@ -195,9 +198,13 @@ class Racer extends Component {
 
     render() {
         return (
-           
-        <div className="mx-auto" id='racer' />
-        )
+        
+        <div className="mx-auto" id='render-game'  > 
+        <img src="assets/takumi.png"/>
+        <img src="assets/keisuke.png"/>
+        </div>
+        
+        );
         
     };
 

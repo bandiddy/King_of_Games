@@ -6,7 +6,7 @@ import Score from "../Score"
 const TopScore = () => (
     <div className="TopScores">
     <h1>Top Scores:</h1>
-        <Score score={props.score}/>
+      {/* <Score score={props.score}/>} */}
     </div>
 );
 
