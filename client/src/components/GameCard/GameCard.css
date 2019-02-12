@@ -10,10 +10,10 @@
 }
 
 .card > .img-container {
-  height: 80%;
+  height: 60%;
   
   text-align: center;
-  background:#6CADDC;
+  background: #228DFF; 
 }
 .card > .img-container > img {
   width: 40%

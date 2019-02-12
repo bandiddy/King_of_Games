@@ -1,0 +1,27 @@
+.jumbotron {
+    background-color:rgb(172, 30, 153); 
+    background-image: linear-gradient(to bottom , rgb(83, 44, 224), rgb(17, 17, 17));
+    margin-bottom: 1%; 
+  }
+  .display-4  {
+    color: #BA01FF;
+    animation: neon6 1.5s ease-in-out infinite alternate; 
+    font-family: 'Faster One', cursive;
+  }
+  .lead {
+   
+    color: rgb(160, 34, 233);
+    font-size: 20px;
+    font-family: 'Vampiro One', cursive;
+    animation: neon6 1.5s ease-in-out infinite alternate; 
+    
+  }
+
+.king{
+    float:left;
+    padding: 1%;
+}
+.header{
+    background-color: rgb(238, 84, 24);
+   /* // animation: neon6 1.5s ease-in-out infinite alternate; */
+  }

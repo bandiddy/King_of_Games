@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/header/header';
 import Footer from './components/Footer/Footer';
-// import Container from './components/Container/container'
+
 import GameCard from './components/GameCard/GameCard'
 import Navbar from './components/Navbar/Navbar'
 import games from "./games.json";
@@ -24,6 +24,7 @@ class App extends Component {
   };
  render() {
    return (
+
     <Router>
      <div>
 <Header />
