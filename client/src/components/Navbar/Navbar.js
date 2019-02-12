@@ -37,9 +37,9 @@ const Navbar = () => (
       TOWER DEFENSE
           </Link>
           <Link
-      to="/racecar"
+      to="/racer"
       className={
-        window.location.pathname === "/racecar" 
+        window.location.pathname === "/racer" 
           ? "nav-link active"
           : "nav-link"
       }

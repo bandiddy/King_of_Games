@@ -11,10 +11,10 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Snake from "./components/Pages/snake"
 import Breakout from "./components/Pages/breakout"
 import Tower from "./components/Pages/towerdefense"
-import Racecar from "./components/Pages/racecar"
+import Racer from "./components/Racer"
 import Topscore from "./components/Pages/topscore"
 // import GameInfo from "./components/GameInfo"
-import TopScoreCArd from "./components/TopScoreCard/TopScoreCard"
+import TopScoreCard from "./components/TopScoreCard/TopScoreCard"
 
 class App extends Component {
 
@@ -32,13 +32,13 @@ class App extends Component {
 <Route exact path="/breakout"  component={Breakout} />
 <Route exact path="/snake" component={Snake}/>
 <Route exact path="/towerdefense" component={Tower}/>
-<Route exact path="/racecar" component={Racecar}/>
+<Route exact path="/racer" component={Racer}/>
 <Route exact path="/topscore" component={Topscore}/>
 
 
 <Wrapper>
 
-<TopScoreCArd />
+<TopScoreCard />
 {this.state.games.map(game => (
   <GameCard
     
