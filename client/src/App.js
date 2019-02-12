@@ -12,10 +12,10 @@ import Snake from "./components/Pages/snake"
 import Breakout from "./components/Pages/breakout"
 import Tower from "./components/Pages/towerdefense"
 import Racecar from "./components/Pages/racecar"
-import Topscore from "./components/Pages/topscore"
+// import Topscore from "./components/Pages/topscore"
 // import GameInfo from "./components/GameInfo"
 import TopScoreCArd from "./components/TopScoreCard/TopScoreCard"
-import Login from "./components/Login"
+// import Login from "./components/Login"
 
 class App extends Component {
 
@@ -31,11 +31,11 @@ class App extends Component {
 <Navbar />
 <Route exact path="/" />
 <Route exact path="/breakout"  component={Breakout} />
-<Route exact path="/" component={Login}/>
+{/* <Route exact path="/" component={Login}/> */}
 <Route exact path="/snake" component={Snake}/>
 <Route exact path="/towerdefense" component={Tower}/>
 <Route exact path="/racecar" component={Racecar}/>
-<Route exact path="/topscore" component={Topscore}/>
+{/* <Route exact path="/topscore" component={Topscore}/> */}
 
 
 <Wrapper>
