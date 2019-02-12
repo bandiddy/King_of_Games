@@ -9,7 +9,8 @@ import games from "./games.json";
 import Wrapper from "./components/Wrapper/Wrapper"
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Snake from "./components/Snake/Snake"
-import Breakout from "./components/Pages/breakout"
+import Breakout from "./components/Breakout/Breakout"
+// import Breakout from "./components/Pages/breakout"
 import Tower from "./components/Pages/towerdefense"
 import Racer from "./components/Racer"
 import Topscore from "./components/TopScore/TopScore"
@@ -40,6 +41,12 @@ class App extends Component {
   path='/snake'
   name="Snake"
   render={(props) => <Snake/>}
+/>
+
+<Route
+  path='/racer'
+  name="Racer"
+  render={(props) => <Racer/>}
 />
 
 <Wrapper>
