@@ -1,6 +1,7 @@
 .jumbotron {
     background-color:rgb(172, 30, 153); 
-    background-image: linear-gradient(to bottom , rgb(83, 44, 224), rgb(17, 17, 17)); 
+    background-image: linear-gradient(to bottom , rgb(83, 44, 224), rgb(17, 17, 17));
+    margin-bottom: 1%; 
   }
   .display-4  {
     color: #BA01FF;
@@ -8,6 +9,7 @@
     font-family: 'Faster One', cursive;
   }
   .lead {
+   
     color: rgb(160, 34, 233);
     font-size: 20px;
     font-family: 'Vampiro One', cursive;

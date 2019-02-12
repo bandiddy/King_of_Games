@@ -1,9 +1,9 @@
 import React from "react";
 import "./TopScoreCard.css";
 
-const TopScoreCard = () => (
+const TopScoreCard = (props) => (
     <div className="TScard">
-        <h1>Top Scores Card. will display overall top score props</h1>
+        <h1 className="TSheader">Top Scores:</h1>
     </div>
   );
   
