@@ -14,8 +14,9 @@ import Tower from "./components/Pages/towerdefense"
 import Racecar from "./components/Pages/racecar"
 // import Topscore from "./components/Pages/topscore"
 // import GameInfo from "./components/GameInfo"
-import TopScoreCArd from "./components/TopScoreCard/TopScoreCard"
+import TopScoreCArd from "./components/TopScoreCard"
 // import Login from "./components/Login"
+import Modal from "./components/Modal/Modal"
 
 class App extends Component {
 
@@ -27,8 +28,10 @@ class App extends Component {
 
     <Router>
      <div>
+     <Modal />   
 <Header />
 <Navbar />
+
 <Route exact path="/" />
 <Route exact path="/breakout"  component={Breakout} />
 {/* <Route exact path="/" component={Login}/> */}

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import  "./modal.css";
+// import ReactDOM from "react-dom";
+import "./Modal.css";
 import Login from "../Login";
 
 class Modal extends Component {
@@ -17,13 +17,13 @@ class Modal extends Component {
   render() {
     return (
       <main>
-        <h1>React Modal</h1>
-        <Modal show={this.state.show} handleClose={this.hideModal}>
+       
+        <div className= "modal"> 
+          <section className="modal-main">
             <Login />
-        </Modal>
-        <button type="button" onClick={this.hideModal}>
-          Close
-        </button>
+            <button onClick={this.hideModal}>close</button>
+          </section>
+        </div>
       </main>
     );
   }
