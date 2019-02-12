@@ -14,7 +14,7 @@ import Tower from "./components/Pages/towerdefense"
 import Racecar from "./components/Pages/racecar"
 import Topscore from "./components/Pages/topscore"
 // import GameInfo from "./components/GameInfo"
-import TopScoreCArd from "./components/TopScoreCard/TopScoreCard"
+import TopScoreCard from "./components/TopScoreCard/TopScoreCard"
 import Login from "./components/Login"
 
 class App extends Component {
@@ -40,7 +40,7 @@ class App extends Component {
 
 <Wrapper>
 
-<TopScoreCArd />
+<TopScoreCard />
 {this.state.games.map(game => (
   <GameCard
     
