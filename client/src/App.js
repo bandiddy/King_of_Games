@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './components/header/header';
+import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
 import GameCard from './components/GameCard/GameCard'
@@ -33,25 +33,26 @@ class App extends Component {
 <Navbar />
 
 <Route exact path="/" />
-<Route exact path="/breakout"  component={Breakout} />
-{/* <Route exact path="/" component={Login}/> */}
-<Route exact path="/snake" component={Snake}/>
-<Route exact path="/towerdefense" component={Tower}/>
-<Route exact path="/racecar" component={Racecar}/>
-{/* <Route exact path="/topscore" component={Topscore}/> */}
-
+<Route
+  path='/breakout'
+  name="Breakout"
+  render={(props) => <Breakout/>}
+/>
+<Route
+  path='/snake'
+  name="Snake"
+  render={(props) => <Snake/>}
+/>
 
 <Wrapper>
 
 <TopScoreCArd />
 {this.state.games.map(game => (
   <GameCard
-    
     id={game.id}
     key={game.id}
     name={game.name}
     image={game.image}
-    
   />
 ))}
 </Wrapper>

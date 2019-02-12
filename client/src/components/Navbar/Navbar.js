@@ -9,47 +9,56 @@ const Navbar = () => (
       Home
     </Link>
     <Link
+<<<<<<< HEAD
         to="/breakout"
         className={
           window.location.pathname === "/breakout" ? "nav-link active" : "nav-link"
         }
       >
        BREAKOUT
+=======
+      to="/breakout"
+      className={
+        window.location.pathname === "/asteroids" ? "nav-link active" : "nav-link"
+      }
+    >
+      BREAKOUT
+>>>>>>> 450552c1e6a9019f734ea916c12e7c7c92cbdfc0
       </Link>
-          <Link
+    <Link
       to="/snake"
       className={
-        window.location.pathname === "/snake" 
+        window.location.pathname === "/snake"
           ? "nav-link active"
           : "nav-link"
       }
     >
       SNAKE
           </Link>
-          <Link
+    <Link
       to="/towerdefense"
       className={
-        window.location.pathname === "/towerdefense" 
+        window.location.pathname === "/towerdefense"
           ? "nav-link active"
           : "nav-link"
       }
     >
       TOWER DEFENSE
           </Link>
-          <Link
+    <Link
       to="/racecar"
       className={
-        window.location.pathname === "/racecar" 
+        window.location.pathname === "/racecar"
           ? "nav-link active"
           : "nav-link"
       }
     >
       RACER
           </Link>
-          <Link
+    <Link
       to="/topscore"
       className={
-         window.location.pathname === "/topscore"
+        window.location.pathname === "/topscore"
           ? "nav-link active"
           : "nav-link"
       }
