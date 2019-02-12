@@ -5,7 +5,7 @@ router.route("/")
   .get(scoresController.findAll)
   .post(scoresController.create);
 
-router.route("/scores/:game")
+router.route("/s/:game")
   .get(scoresController.findAllByGame);
 
 router.route("/:id")
