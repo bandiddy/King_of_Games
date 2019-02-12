@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './components/Header/header';
+import Header from './components/header/header';
 import Footer from './components/Footer/Footer';
-// import Container from './components/Container/container'
+
 import GameCard from './components/GameCard/GameCard'
 import Navbar from './components/Navbar/Navbar'
 import games from "./games.json";
 import Wrapper from "./components/Wrapper/Wrapper"
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Snake from "./components/Pages/snake"
-import Asteroids from "./components/Pages/asteroids"
+import Breakout from "./components/Pages/breakout"
 import Tower from "./components/Pages/towerdefense"
 import Racecar from "./components/Pages/racecar"
 import Topscore from "./components/Pages/topscore"
+// import GameInfo from "./components/GameInfo"
+import TopScoreCArd from "./components/TopScoreCard/TopScoreCard"
 import Login from "./components/Login"
 
 class App extends Component {
@@ -22,12 +24,14 @@ class App extends Component {
   };
  render() {
    return (
+
     <Router>
      <div>
 <Header />
 <Navbar />
+<Route exact path="/" />
+<Route exact path="/breakout"  component={Breakout} />
 <Route exact path="/" component={Login}/>
-<Route exact path="/asteroids"  component={Asteroids} />
 <Route exact path="/snake" component={Snake}/>
 <Route exact path="/towerdefense" component={Tower}/>
 <Route exact path="/racecar" component={Racecar}/>
@@ -35,6 +39,8 @@ class App extends Component {
 
 
 <Wrapper>
+
+<TopScoreCArd />
 {this.state.games.map(game => (
   <GameCard
     

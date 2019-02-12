@@ -1,7 +1,8 @@
 import React from "react";
 import "./GameCard.css";
 import GameInfo from "../GameInfo";
-import TopScore from "../TopScore"
+// import TopScore from "./TopScore"
+
 
 const GameCard = props => (
   <div className="card">
@@ -11,7 +12,21 @@ const GameCard = props => (
         <li>
           <strong>Game:</strong> {props.name}
         </li>
-        <TopScore score={props.score} />
+        <li>
+          {/* <TopScore name = {props.name} score ={props.score} /> */}
+          {/* <strong>Top Score:</strong>
+        </li>
+        <li>
+          <ul>
+            <li>1:</li><strong></strong>
+            <li>2:</li><strong></strong>
+            <li>3:</li><strong></strong>
+            <li>4:</li><strong></strong>
+
+          </ul>
+
+        </li> */}
+        </li>
       </ul>
     </div>
   </div>

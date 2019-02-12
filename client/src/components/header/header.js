@@ -1,12 +1,12 @@
 import React from "react";
-//import "./Header.css";
+import "./header.css";
 
-const Header = () => (
+const Header = (props) => (
     <header class="jumbotron ">
-    <div className="header p-3 mb-2 bg-info text-white ">
+        <img src="./images/kingofgames.png" className="king" height="120" width="100" alt={props}></img>
         <h1 class="display-4 ">The King's Arcade</h1>
         <h3 class="lead">Reign over all players</h3>
-    </div>
+    
     </header>
 );
 

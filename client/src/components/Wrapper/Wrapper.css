@@ -8,4 +8,6 @@
   justify-content: space-around;
   align-content: flex-start;
   overflow: auto;
+  background-color:black; 
+  background-image: linear-gradient(to top,  rgba(83, 44, 224), rgba(17, 17, 17)); 
 }
