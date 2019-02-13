@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Modal.css";
-import Login from "../Login";
+import Login from "../Home";
 
 export default class Modal extends Component {
   state = { show: true };
