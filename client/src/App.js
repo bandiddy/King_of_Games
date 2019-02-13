@@ -16,7 +16,9 @@ import Modal from './components/Modal/Modal';;
 
 export default class App extends Component {
   state = {
-    games
+    games,
+    username: "",
+    password: ""
   };
   constructor(props) {
     super(props);
@@ -52,7 +54,7 @@ export default class App extends Component {
             render={(props) => <Racer />}
           />
           <Wrapper>
-            <TopScoreCard />
+            <TopScoreCard/>
             {this.state.games.map(game => (
               <GameCard
                 id={game.id}
