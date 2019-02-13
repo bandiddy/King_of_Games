@@ -27,6 +27,7 @@
 
 .card > .content > ul {
   list-style-type: none;
+  text-align: center;
 }
 
 .card > .content > ul > li {
@@ -44,4 +45,9 @@
 
 .card > .remove:hover {
   color: #d50000;
+}
+
+h2 {
+  font-family: 'Press Start 2P', cursive;
+  text-align: 'center'
 }

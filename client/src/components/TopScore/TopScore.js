@@ -7,7 +7,7 @@ export default class TopScore extends React.Component {
     render() {
         return(
             <div className="TopScores">
-                <h1>Top Scores:</h1>
+                <h1 class="text-center">Top Scores:</h1>
                 
             </div>
         )
