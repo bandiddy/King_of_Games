@@ -1,50 +1,84 @@
 import React, { Component } from "react";
-import { Button, FormGroup, FormControl } from "react-bootstrap";
-import "./Login.css";
 
-export default class Login extends Component {
-  validateForm() {
-    return this.state.username.length > 0 && this.state.password.length > 0;
-  }
 
-  handleChange = event => {
+
+
+class Login extends Component {
+  // Setting the component's initial state
+  state = {
+    username: "",
+    password: ""
+  };
+
+  handleInputChange = event => {
+    // Getting the value and name of the input which triggered the change
+    let value = event.target.value;
+    const name = event.target.name;
+
+    if (name === "password") {
+      value = value.substring(0, 15);
+    }
+    // Updating the input's state
     this.setState({
-      [event.target.id]: event.target.value
+      [name]: value
     });
-  }
+  };
 
-  handleSubmit = event => {
+  handleFormSubmit = event => {
+    // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-  }
+    if (!this.state.username) {
+      alert("Fill out your first and last name please!");
+    } else if (this.state.password.length < 6) {
+      alert(
+        `Choose a more secure password ${this.state.username}`
+      );
+    } else {
+      alert(`Hello ${this.state.username}`);
+    }
+
+    this.setState({
+      username: "",
+     
+      password: ""
+    });
+  };
 
   render() {
+    // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
-      <div className="Login">
-        <form onSubmit={this.handleSubmit}>
-          <FormGroup controlId="username" bsSize="large">
-            <h1>Username</h1>
-            <FormControl
-              autoFocus
-              type="username"
-              value={this.state.username}
-              onChange={this.handleChange}/>
-          </FormGroup>
-          <FormGroup controlId="password" bsSize="large">
-            <h1>Password</h1>
-            <FormControl
-              value={this.state.password}
-              onChange={this.handleChange}
-              type="password"/>
-          </FormGroup>
-          <Button
-            block
-            bsSize="large"
-            disabled={!this.validateForm()}
-            type="submit">
-            Login
-          </Button>
+      <div>
+        <p>
+          Hello {this.state.firstName} {this.state.lastName}
+        </p>
+        <form className="form">
+          <input
+            value={this.state.firstName}
+            name="firstName"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder="First Name"
+          />
+          <input
+            value={this.state.lastName}
+            name="lastName"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder="Last Name"
+          />
+          <input
+            value={this.state.password}
+            name="password"
+            onChange={this.handleInputChange}
+            type="password"
+            placeholder="Password"
+          />
+          <button onClick={this.handleFormSubmit}>Submit</button>
         </form>
       </div>
     );
   }
 }
+
+export default Login;
+

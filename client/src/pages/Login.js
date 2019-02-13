@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import './App.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import Login from './components/Login/Login'
 
-export default class App extends Component {
+
+export default class Main extends Component {
   constructor(props) {
     super(props);
   this.state = {
