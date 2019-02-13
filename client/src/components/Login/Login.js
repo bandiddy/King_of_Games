@@ -3,15 +3,6 @@ import { Button, FormGroup, FormControl } from "react-bootstrap";
 import "./Login.css";
 
 export default class Login extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      username: "",
-      password: ""
-    };
-  }
-
   validateForm() {
     return this.state.username.length > 0 && this.state.password.length > 0;
   }

@@ -35,9 +35,9 @@ export default class Score extends React.Component {
         return (
             <ul>
                 {this.state.items.map(item => (
-                    <li key={item.username}>
-                        {item.username} {item.score}
-                    </li>
+                  <li key={item.username}>
+                      {item.username} {item.score}
+                  </li>
                 ))}
             </ul>
         )
