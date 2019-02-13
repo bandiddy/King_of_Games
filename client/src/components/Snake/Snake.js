@@ -4,7 +4,7 @@ import 'pixi';
 import 'p2';
 import Phaser from 'phaser';
 
-
+var username;
 var snake;
 var food;
 var cursors;
@@ -45,23 +45,27 @@ var repositionFood = function () {
     }
 };
 
-var postScore = function(food) {
+var postScore = function (food, username) {
     API.saveScore({
         game: "Snake",
         score: food.total,
         username: "username"
     })
-    .catch(err => console.log(err));
+        .catch(err => console.log(err));
 };
 
 
 
 export default class Snake extends Component {
+    componentDidMount() {
+        username = this.props.username
+    }
+
     preload() {
         this.load.image('food', 'assets/food.png');
         this.load.image('body', 'assets/body.png');
     }
-    
+
     create() {
         var Food = new Phaser.Class({
             Extends: Phaser.GameObjects.Image,
@@ -147,7 +151,6 @@ export default class Snake extends Component {
 
                 if (hitBody) {
                     this.alive = false;
-                    postScore(food);
                     return false;
                 }
                 else {
@@ -194,6 +197,8 @@ export default class Snake extends Component {
 
     update(time, delta) {
         if (!snake.alive) {
+            this.scene.stop();
+            postScore(food, username);
             return;
         }
 

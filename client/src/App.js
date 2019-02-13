@@ -31,16 +31,19 @@ export default class App extends Component {
           <Route exact path="/" />
           <Route
             path='/breakout'
+            username = {this.state.username}
             name="Breakout"
             render={(props) => <Breakout />}
           />
           <Route
             path='/snake'
+            username = {this.state.username}
             name="Snake"
             render={(props) => <Snake />}
           />
           <Route
             path='/racer'
+            username = {this.state.username}
             name="Racer"
             render={(props) => <Racer />}
           />

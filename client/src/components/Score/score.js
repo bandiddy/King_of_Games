@@ -8,18 +8,17 @@ export default class Score extends React.Component {
         this.state = {
           error: null,
           isLoaded: false,
-          items: []
+          scores: []
         };
       }
     
       componentDidMount() {
         API.getGameScores(this.props.name)
-          .then(res => res.json())
           .then(
             (result) => {
               this.setState({
                 isLoaded: true,
-                items: result.items
+                scores: result.data
               });
             },
             (error) => {
@@ -32,11 +31,12 @@ export default class Score extends React.Component {
       }
     
     render() {
+      console.log(this.state.scores);
         return (
             <ul>
-                {this.state.items.map(item => (
-                  <li key={item.username}>
-                      {item.username} {item.score}
+                {this.state.scores.map(score => (
+                  <li key={score.username}>
+                      {score.username} {score.score}
                   </li>
                 ))}
             </ul>
