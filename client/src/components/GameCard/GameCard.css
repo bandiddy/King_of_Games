@@ -27,6 +27,7 @@
 
 .card > .content > ul {
   list-style-type: none;
+  text-align: center;
 }
 
 .card > .content > ul > li {
