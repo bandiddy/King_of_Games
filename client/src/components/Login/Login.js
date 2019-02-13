@@ -36,23 +36,20 @@ export default class Login extends Component {
               autoFocus
               type="username"
               value={this.state.username}
-              onChange={this.handleChange}
-            />
+              onChange={this.handleChange}/>
           </FormGroup>
           <FormGroup controlId="password" bsSize="large">
             <h1>Password</h1>
             <FormControl
               value={this.state.password}
               onChange={this.handleChange}
-              type="password"
-            />
+              type="password"/>
           </FormGroup>
           <Button
             block
             bsSize="large"
             disabled={!this.validateForm()}
-            type="submit"
-          >
+            type="submit">
             Login
           </Button>
         </form>

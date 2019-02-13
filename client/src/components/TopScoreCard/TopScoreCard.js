@@ -1,10 +1,14 @@
 import React from "react";
 import "./TopScoreCard.css";
+import TopScore from "../TopScore/TopScore"
 
-const TopScoreCard = (props) => (
-    <div className="TScard">
-        <h1 className="TSheader">Top Scores:</h1>
-    </div>
-  );
+export default class TopScoreCard extends React.Component {
+    render() {
+        return(
+            <div className="TScard">
+                <TopScore/>
+            </div>
+        )
+    }
+}
   
-  export default TopScoreCard;

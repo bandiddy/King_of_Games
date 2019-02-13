@@ -4,6 +4,9 @@ export default {
   getScores: function() {
     return axios.get("/api/scores");
   },
+  getGameScores: function(game) {
+    return axios.get("/api/scores/game/" + game);
+  },
   getScore: function(id) {
     return axios.get("/api/scores/" + id);
   },
