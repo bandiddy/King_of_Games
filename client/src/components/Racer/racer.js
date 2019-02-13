@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Phaser from 'phaser';
+import API from "../../utils/API";
 import "./Racer.css";
+
        let x = 0;
        let y;
        let player;
@@ -63,15 +65,16 @@ class Racer extends Component {
  
     // Build the Game class
     componentDidMount() {
-       
+        const width = 800;
+        const height = 600;
 
 
         const config = {
             
                 type: Phaser.AUTO,
-                width: 800,
-                height: 600,
-                parent: 'racer',
+                width,
+                height,
+                parent: 'render-game',
                 physics: {
                     default: 'arcade',
                     arcade: {
@@ -91,9 +94,9 @@ class Racer extends Component {
     };
     
 
-        
+      
         preload(){
-        this.load.audio('theme', 'assets/gas.mp3');
+        this.load.audio('theme', 'assets/audio/gas.mp3');
         this.load.image('road', 'assets/road.png');
         this.load.image('evo', 'assets/player-evo.png');
         this.load.image('blue-traffic', 'assets/blue-traffic.png');
@@ -103,7 +106,7 @@ class Racer extends Component {
         create () {
             music = this.sound.add('theme');
             
-          //  music.play();
+           // music.play();
             this.physics.world.gravity.y = Phaser.Math.RND.integerInRange(200, 400);
             x = Phaser.Math.RND.integerInRange(200, 600);
             y = -150;
@@ -195,9 +198,13 @@ class Racer extends Component {
 
     render() {
         return (
-           
-        <div className="mx-auto" id='racer' />
-        )
+        
+        <div className="racer" id='render-game'  > 
+        {/* <img className="takumi" src="assets/takumi.png" height="250" width="270"/>
+        <img className="keisuke" src="assets/keisuke.png" height="250" width="270"/> */}
+        </div>
+        
+        );
         
     };
 
