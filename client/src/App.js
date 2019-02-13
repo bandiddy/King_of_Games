@@ -8,10 +8,9 @@ import Navbar from './components/Navbar/Navbar'
 import games from "./games.json";
 import Wrapper from "./components/Wrapper/Wrapper"
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Snake from "./components/Snake/Snake"
-import Breakout from "./components/Breakout/Breakout"
-// import Breakout from "./components/Pages/breakout"
-import Tower from "./components/Pages/towerdefense"
+import Breakout from "./components/Breakout/Breakout";
+import Snake from "./components/Snake/Snake";
+//import Tower from "./componentstowerdefense"
 import Racer from "./components/Racer"
 import Topscore from "./components/TopScore/TopScore"
 // import GameInfo from "./components/GameInfo"
