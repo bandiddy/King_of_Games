@@ -10,7 +10,7 @@ const GameCard = props => (
     <div className="content">
       <ul>
         <li>
-          <strong>Game:</strong> {props.name}
+          <strong> {props.name}</strong>
         </li>
         <li>
           {/* <TopScore name = {props.name} score ={props.score} /> */}
