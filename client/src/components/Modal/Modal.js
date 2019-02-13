@@ -1,8 +1,12 @@
 import React, { Component } from "react";
+<<<<<<< HEAD
 import  "./modal.css";
+=======
+import "./Modal.css";
+>>>>>>> jc
 import Login from "../Login";
 
-class Modal extends Component {
+export default class Modal extends Component {
   state = { show: true };
 
   showModal = () => {
@@ -15,16 +19,12 @@ class Modal extends Component {
 
   render() {
     return (
-      <main>
-        <h1>React Modal</h1>
-        <Modal show={this.state.show} handleClose={this.hideModal}>
-            <Login />
-        </Modal>
-        <button type="button" onClick={this.hideModal}>
-          Close
-        </button>
-      </main>
+      <div className="modal">
+        <section className="modal-main">
+          <Login />
+          <button onClick={this.hideModal}>close</button>
+        </section>
+      </div>
     );
   }
 }
-export default Modal

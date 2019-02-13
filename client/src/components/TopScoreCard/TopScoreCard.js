@@ -1,5 +1,6 @@
 import React from "react";
 import "./TopScoreCard.css";
+<<<<<<< HEAD
 import TopScore from "../TopScore"
 
 const TopScoreCard = (props) => (
@@ -9,3 +10,17 @@ const TopScoreCard = (props) => (
   );
   
   export default TopScoreCard;
+=======
+import TopScore from "../TopScore/TopScore"
+
+export default class TopScoreCard extends React.Component {
+    render() {
+        return(
+            <div className="TScard">
+                <TopScore/>
+            </div>
+        )
+    }
+}
+  
+>>>>>>> jc

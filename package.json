@@ -23,12 +23,19 @@
   "dependencies": {
     "axios": "^0.16.2",
     "bcrypt-nodejs": "0.0.3",
-    "express": "^4.16.3",
+    "expose-loader": "^0.7.5",
+    "express": "^4.16.4",
     "if-env": "^1.0.4",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.4",
     "passport": "^0.4.0",
+<<<<<<< HEAD
     "phaser": "^3.16.1",
+=======
+    "passport-local": "^1.0.0",
+    "phaser": "^3.16.2",
+    "pixi": "^0.3.1",
+>>>>>>> jc
     "sequelize": "^4.42.0"
   }
 }

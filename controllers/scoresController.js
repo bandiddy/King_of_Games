@@ -11,7 +11,13 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findById: function (req, res) {
+  findAllByGame: function(req, res) {
+    db.Score
+      .findAll({where: {game:req.params.game}})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  findById: function(req, res) {
     db.Score
       .findOne({ where: { id: req.params.id } })
       .then(dbModel => res.json(dbModel))

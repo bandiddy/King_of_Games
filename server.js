@@ -2,10 +2,13 @@ const express = require("express");
 const routes = require("./routes");
 const db = require("./models");
 const passport = require("./config/passport");
+<<<<<<< HEAD
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
+=======
+>>>>>>> jc
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -20,7 +23,7 @@ app.use(passport.session());
 app.use(routes);
 
 
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });

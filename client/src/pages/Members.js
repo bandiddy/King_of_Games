@@ -36,7 +36,6 @@ class App extends Component {
 <Wrapper>
 {this.state.games.map(game => (
   <GameCard
-    
     id={game.id}
     key={game.id}
     name={game.name}
