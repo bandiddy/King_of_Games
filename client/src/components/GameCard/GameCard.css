@@ -46,3 +46,8 @@
 .card > .remove:hover {
   color: #d50000;
 }
+
+h2 {
+  font-family: 'Press Start 2P', cursive;
+  text-align: 'center'
+}

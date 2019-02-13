@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-
-
-
+import "./Login.css";
 
 class Login extends Component {
   // Setting the component's initial state
@@ -12,12 +10,8 @@ class Login extends Component {
 
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
-    let value = event.target.value;
-    const name = event.target.name;
+    const { name, value } = event.target;
 
-    if (name === "password") {
-      value = value.substring(0, 15);
-    }
     // Updating the input's state
     this.setState({
       [name]: value
@@ -27,20 +21,11 @@ class Login extends Component {
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-    if (!this.state.username) {
-      alert("Fill out your first and last name please!");
-    } else if (this.state.password.length < 6) {
-      alert(
-        `Choose a more secure password ${this.state.username}`
-      );
-    } else {
-      alert(`Hello ${this.state.username}`);
-    }
 
+    // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
+    alert(`Hello ${this.state.username}`);
     this.setState({
-      username: "",
-     
-      password: ""
+      username: ""
     });
   };
 
@@ -49,29 +34,22 @@ class Login extends Component {
     return (
       <div>
         <p>
-          Hello {this.state.firstName} {this.state.lastName}
+          Hello {this.state.username} 
         </p>
         <form className="form">
           <input
-            value={this.state.firstName}
-            name="firstName"
+            value={this.state.username}
+            name="username"
             onChange={this.handleInputChange}
             type="text"
-            placeholder="First Name"
-          />
-          <input
-            value={this.state.lastName}
-            name="lastName"
-            onChange={this.handleInputChange}
-            type="text"
-            placeholder="Last Name"
+            placeholder="username"
           />
           <input
             value={this.state.password}
             name="password"
             onChange={this.handleInputChange}
-            type="password"
-            placeholder="Password"
+            type="text"
+            placeholder="password"
           />
           <button onClick={this.handleFormSubmit}>Submit</button>
         </form>
@@ -81,4 +59,3 @@ class Login extends Component {
 }
 
 export default Login;
-
