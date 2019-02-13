@@ -65,8 +65,8 @@ class Racer extends Component {
  
     // Build the Game class
     componentDidMount() {
-        const width = 640;
-        const height = 480;
+        const width = 800;
+        const height = 600;
 
 
         const config = {
@@ -94,9 +94,9 @@ class Racer extends Component {
     };
     
 
-        
+      
         preload(){
-        this.load.audio('theme', 'assets/gas.mp3');
+        this.load.audio('theme', 'assets/audio/gas.mp3');
         this.load.image('road', 'assets/road.png');
         this.load.image('evo', 'assets/player-evo.png');
         this.load.image('blue-traffic', 'assets/blue-traffic.png');
@@ -106,7 +106,7 @@ class Racer extends Component {
         create () {
             music = this.sound.add('theme');
             
-          //  music.play();
+           // music.play();
             this.physics.world.gravity.y = Phaser.Math.RND.integerInRange(200, 400);
             x = Phaser.Math.RND.integerInRange(200, 600);
             y = -150;
@@ -199,9 +199,9 @@ class Racer extends Component {
     render() {
         return (
         
-        <div className="mx-auto" id='render-game'  > 
-        <img src="assets/takumi.png"/>
-        <img src="assets/keisuke.png"/>
+        <div className="racer" id='render-game'  > 
+        {/* <img className="takumi" src="assets/takumi.png" height="250" width="270"/>
+        <img className="keisuke" src="assets/keisuke.png" height="250" width="270"/> */}
         </div>
         
         );

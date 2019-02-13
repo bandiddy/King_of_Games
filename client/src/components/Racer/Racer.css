@@ -1,3 +1,17 @@
+.racer{
+    margin-top: 3%;
+}
+
 canvas {
-    margin-left: 18%;
+    margin-left: 25%;
+    
+} 
+
+.keisuke{
+    margin-right: 5%;
+    float: right;
+}
+.takumi {
+   margin-left: 5%;
+   float: left;
 }

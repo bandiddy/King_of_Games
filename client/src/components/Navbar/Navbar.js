@@ -16,20 +16,20 @@ const Navbar = () => (
       >
        BREAKOUT
       </Link>
-          <Link
+    <Link
       to="/snake"
       className={
-        window.location.pathname === "/snake" 
+        window.location.pathname === "/snake"
           ? "nav-link active"
           : "nav-link"
       }
     >
       SNAKE
           </Link>
-          <Link
+    <Link
       to="/towerdefense"
       className={
-        window.location.pathname === "/towerdefense" 
+        window.location.pathname === "/towerdefense"
           ? "nav-link active"
           : "nav-link"
       }
@@ -46,10 +46,10 @@ const Navbar = () => (
     >
       RACER
           </Link>
-          <Link
+    <Link
       to="/topscore"
       className={
-         window.location.pathname === "/topscore"
+        window.location.pathname === "/topscore"
           ? "nav-link active"
           : "nav-link"
       }
