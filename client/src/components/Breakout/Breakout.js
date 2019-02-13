@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import Phaser from 'phaser';
 import API from "../../utils/API";
+import 'pixi';
+import 'p2';
+import Phaser from 'phaser';
+
 
 var score = 0;
 var lives = 3;
@@ -54,7 +57,7 @@ var postScore = function (score) {
 
 
 
-class Breakout extends Component {
+export default class Breakout extends Component {
     game = {};
     cursors = {};
 
@@ -142,4 +145,3 @@ class Breakout extends Component {
 }
 
 
-export default Breakout;

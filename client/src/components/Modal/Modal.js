@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-// import ReactDOM from "react-dom";
 import "./Modal.css";
 import Login from "../Login";
 
-class Modal extends Component {
+export default class Modal extends Component {
   state = { show: true };
 
   showModal = () => {
@@ -16,16 +15,12 @@ class Modal extends Component {
 
   render() {
     return (
-      <main>
-       
-        <div className= "modal"> 
-          <section className="modal-main">
-            <Login />
-            <button onClick={this.hideModal}>close</button>
-          </section>
-        </div>
-      </main>
+      <div className="modal">
+        <section className="modal-main">
+          <Login />
+          <button onClick={this.hideModal}>close</button>
+        </section>
+      </div>
     );
   }
 }
-export default Modal

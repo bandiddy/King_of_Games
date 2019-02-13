@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import Phaser from 'phaser';
 import API from "../../utils/API";
+import 'pixi';
+import 'p2';
+import Phaser from 'phaser';
+
 
 var snake;
 var food;
@@ -53,7 +56,7 @@ var postScore = function(food) {
 
 
 
-class Snake extends Component {
+export default class Snake extends Component {
     preload() {
         this.load.image('food', 'assets/food.png');
         this.load.image('body', 'assets/body.png');
@@ -244,6 +247,3 @@ class Snake extends Component {
         return <div id='render-game' />
     }
 }
-
-
-export default Snake;
