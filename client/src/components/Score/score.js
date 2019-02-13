@@ -5,7 +5,7 @@ function Score(props) {
     return (
         <div className="Scores">
             <ol>
-                <li>{props.game.scores}</li>
+                <li>{props.scores} {props.username} {props.id}</li>
             </ol>
         </div>
 

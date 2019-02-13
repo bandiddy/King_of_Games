@@ -8,6 +8,7 @@ export default class Login extends Component {
 
     this.state = {
       username: "",
+      email: "",
       password: ""
     };
   }
@@ -38,6 +39,15 @@ export default class Login extends Component {
               value={this.state.username}
               onChange={this.handleChange}
             />
+            <FormGroup controlId="email" bsSize="large">
+              <ControlLabel>Email</ControlLabel>
+              <FormControl
+                autoFocus
+                type="email"
+                value={this.state.email}
+                onChange={this.handleChange}
+              />
+            </FormGroup>
           </FormGroup>
           <FormGroup controlId="password" bsSize="large">
             <ControlLabel>Password</ControlLabel>

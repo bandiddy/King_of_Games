@@ -3,10 +3,10 @@ import "./TopScore.css";
 import Score from "../Score"
 
 
-const TopScore = () => (
+const TopScore = (props) => (
     <div className="TopScores">
     <h1>Top Scores:</h1>
-        <Score score={props.score}/>
+        <Score score={props.score} username={props.username} id={props.id}/>
     </div>
 );
 
