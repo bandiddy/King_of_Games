@@ -16,7 +16,9 @@ import Modal from './components/Modal/Modal';;
 
 export default class App extends Component {
   state = {
-    games
+    games,
+    username: "",
+    password: ""
   };
 
   render() {
