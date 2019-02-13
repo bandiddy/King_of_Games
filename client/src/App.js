@@ -43,7 +43,7 @@ export default class App extends Component {
             render={(props) => <Racer />}
           />
           <Wrapper>
-            <TopScoreCard />
+            <TopScoreCard/>
             {this.state.games.map(game => (
               <GameCard
                 id={game.id}
