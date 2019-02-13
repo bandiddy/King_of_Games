@@ -5,9 +5,6 @@ import Login from "../Login";
 export default class Modal extends Component {
   state = { show: true };
 
-  showModal = () => {
-    this.setState({ show: true });
-  };
 
   hideModal = () => {
     this.setState({ show: false });
@@ -17,7 +14,9 @@ export default class Modal extends Component {
     return (
       <div className="modal">
         <section className="modal-main">
-          <Login username={this.state.username} email={this.state.email} password={this.state.password} />
+          {this.state.show &&
+            <Login username={this.props.username} email={this.props.email} password={this.props.password} />
+          }
           <button onClick={this.hideModal}>close</button>
         </section>
       </div>
