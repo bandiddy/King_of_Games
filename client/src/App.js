@@ -5,7 +5,7 @@ import games from "./games.json";
 import Wrapper from "./components/Wrapper/Wrapper";
 import GameCard from './components/GameCard/GameCard';
 import TopScoreCard from "./components/TopScoreCard/TopScoreCard";
-import Snake from "./components/Snake";
+import Snake from "./components/Snake/Snake";
 import Breakout from "./components/Breakout/Breakout";
 //import Tower from "./components/Towerdefense/Towerdefense";
 import Racer from "./components/Racer/Racer";

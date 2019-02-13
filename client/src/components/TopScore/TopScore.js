@@ -8,7 +8,7 @@ export default class TopScore extends React.Component {
         return(
             <div className="TopScores">
                 <h1>Top Scores:</h1>
-                
+                <Score username={this.game.username} score={this.game.score} />
             </div>
         )
     }
