@@ -8,9 +8,10 @@ import Navbar from './components/Navbar/Navbar'
 import games from "./games.json";
 import Wrapper from "./components/Wrapper/Wrapper"
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Breakout from "./components/Breakout/Breakout";
-import Snake from "./components/Snake/Snake";
-//import Tower from "./componentstowerdefense"
+import Snake from "./components/Snake/Snake"
+import Breakout from "./components/Breakout/Breakout"
+// import Breakout from "./components/Pages/breakout"
+import Tower from "./components/Pages/towerdefense"
 import Racer from "./components/Racer"
 import Topscore from "./components/TopScore/TopScore"
 // import GameInfo from "./components/GameInfo"
@@ -41,17 +42,19 @@ class App extends Component {
   name="Snake"
   render={(props) => <Snake/>}
 />
-
-{/* <Route exact path="/towerdefense" component={Tower}/> */}
+=========
+<Route exact path="/breakout"  component={Breakout} />
+{/* <Route exact path="/" component={Login}/> */}
+<Route exact path="/snake" component={Snake}/>
+<Route exact path="/towerdefense" component={Tower}/>
+<Route exact path="/racer" component={Racer}/>
+<Route exact path="/topscore" component={Topscore}/>
 
 <Route
   path='/racer'
   name="Racer"
   render={(props) => <Racer/>}
 />
-
-<Route exact path="/topscore" component={Topscore}/>
-
 
 <Wrapper>
 
