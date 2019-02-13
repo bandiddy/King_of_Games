@@ -47,18 +47,28 @@ var hitCar = (player, traffic, hasCrashed) => {
     if (carHP === 0) {
         hasCrashed = true;
         gameOver.setText('You Crashed');
+        postScore(score);
 
     }
 
 };
 
 var scoreCounter = (time, hasCrashed) => {
-    if(carHP > 0){
-   score +100;
+   if(carHP > 0){
+   score +=10;
    scoreText.setText('Score:' + score)   
    console.log(score)   
-    }
+   }
  };
+
+ var postScore = function(food) {
+    API.saveScore({
+        game: "Racer",
+        score: score,
+        username: "username"
+    })
+    .catch(err => console.log(err));
+};
 
 class Racer extends Component {
     game = {};
@@ -238,7 +248,7 @@ class Racer extends Component {
             gameOver = this.add.text(100, 200, '', { fontSize: 100, color: '#ffff00' })
             stats.setText('HP: ' + carHP);
             scoreText= this.add.text(10, 70, '', { fontSize: 48, color: '#ffff00' });
-            scoreEvent = this.time.addEvent({ delay: 2000, callback: scoreCounter, callbackScope: this, loop: true });
+            scoreEvent = this.time.addEvent({ delay: 1000, callback: scoreCounter, callbackScope: this, loop: true });
 
             console.log(hasCrashed);
 
