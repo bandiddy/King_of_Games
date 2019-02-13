@@ -1,9 +1,5 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
-import  "./modal.css";
-=======
 import "./Modal.css";
->>>>>>> jc
 import Login from "../Login";
 
 export default class Modal extends Component {
@@ -21,7 +17,7 @@ export default class Modal extends Component {
     return (
       <div className="modal">
         <section className="modal-main">
-          <Login />
+          <Login username={this.state.username} email={this.state.email} password={this.state.password} />
           <button onClick={this.hideModal}>close</button>
         </section>
       </div>

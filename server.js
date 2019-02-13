@@ -2,13 +2,6 @@ const express = require("express");
 const routes = require("./routes");
 const db = require("./models");
 const passport = require("./config/passport");
-<<<<<<< HEAD
-
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(express.static("public"));
-=======
->>>>>>> jc
 
 const app = express();
 const PORT = process.env.PORT || 3001;

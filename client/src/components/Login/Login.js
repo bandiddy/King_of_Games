@@ -3,15 +3,7 @@ import { Button, FormGroup, FormControl } from "react-bootstrap";
 import "./Login.css";
 
 export default class Login extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      username: "",
-      email: "",
-      password: ""
-    };
-  }
 
   validateForm() {
     return this.state.username.length > 0 && this.state.password.length > 0;
@@ -37,28 +29,14 @@ export default class Login extends Component {
               autoFocus
               type="username"
               value={this.state.username}
-<<<<<<< HEAD
-              onChange={this.handleChange}
-            />
-            <FormGroup controlId="email" bsSize="large">
-              <ControlLabel>Email</ControlLabel>
-              <FormControl
-                autoFocus
-                type="email"
-                value={this.state.email}
-                onChange={this.handleChange}
-              />
-            </FormGroup>
-=======
-              onChange={this.handleChange}/>
->>>>>>> jc
+              onChange={this.handleChange} />
           </FormGroup>
           <FormGroup controlId="password" bsSize="large">
             <h1>Password</h1>
             <FormControl
               value={this.state.password}
               onChange={this.handleChange}
-              type="password"/>
+              type="password" />
           </FormGroup>
           <Button
             block

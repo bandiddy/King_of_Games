@@ -2,19 +2,6 @@ import React, { Component } from "react";
 import "./Score.css";
 import API from "../../utils/API"
 
-<<<<<<< HEAD
-function Score(props) {
-    return (
-        <div className="Scores">
-            <ol>
-                <li>{props.scores} {props.username} {props.id}</li>
-            </ol>
-        </div>
-
-    );
-};
-export default Score;
-=======
 export default class Score extends React.Component {
     constructor(props) {
         super(props);
@@ -48,12 +35,11 @@ export default class Score extends React.Component {
         return (
             <ul>
                 {this.state.items.map(item => (
-                    <li key={item.username}>
-                        {item.username} {item.score}
-                    </li>
+                  <li key={item.username}>
+                      {item.username} {item.score}
+                  </li>
                 ))}
             </ul>
         )
     }
 }
->>>>>>> jc
