@@ -1,6 +1,10 @@
-import React from "react";
+import React, { Component } from 'react';
 import "./Wrapper.css";
 
-const Wrapper = props => <div className="wrapper">{props.children}</div>;
-
-export default Wrapper;
+export default class Wrapper extends React.Component {
+    render() {
+        return(
+            <div className="wrapper">{this.props.children}</div>
+        )
+    }
+}
