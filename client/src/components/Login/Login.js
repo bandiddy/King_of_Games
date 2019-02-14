@@ -2,26 +2,11 @@ import React, { Component } from "react";
 import "./Login.css";
 
 class Login extends Component {
-  // Setting the component's initial state
-  state = {
-    username: "",
-    password: ""
-  };
 
-  handleInputChange = event => {
-    // Getting the value and name of the input which triggered the change
-    const { name, value } = event.target;
-
-    // Updating the input's state
-    this.setState({
-      [name]: value
-    });
-  };
-
-  handleFormSubmit = event => {
+   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-
+    
     // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
     alert(`Hello ${this.state.username}`);
     this.setState({
@@ -39,6 +24,7 @@ class Login extends Component {
         <form className="form">
           <input
             value={this.state.username}
+            ref = { node => {this.state.password = node}}
             name="username"
             onChange={this.handleInputChange}
             type="text"
@@ -46,6 +32,7 @@ class Login extends Component {
           />
           <input
             value={this.state.password}
+            ref ={ node => {this.state.password = node}}
             name="password"
             onChange={this.handleInputChange}
             type="text"

@@ -1,6 +1,9 @@
 import axios from "axios";
 
 export default {
+  getUser: function(){
+   return(axios.post())
+  },
   getScores: function() {
     return axios.get("/api/scores");
   },
