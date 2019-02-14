@@ -13,8 +13,8 @@ if (process.env.NODE_ENV === "production") {
 }
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(routes);
 
+app.use(routes);
 
 db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {

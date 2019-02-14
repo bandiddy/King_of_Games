@@ -1,61 +1,73 @@
 import React, { Component } from "react";
+import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import "./Login.css";
+import API from "../../utils/API";
+import Axios from "axios";
 
-class Login extends Component {
-  // Setting the component's initial state
-  state = {
-    username: "",
-    password: ""
-  };
+export default class Login extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            username: "",
+            password: ""
+        };
+    }
 
-  handleInputChange = event => {
-    // Getting the value and name of the input which triggered the change
-    const { name, value } = event.target;
+    loginUser(username, password) {
+        Axios.post("/api/users/login", {
+          username: username,
+          password: password
+        }).then(function (data) {
+          window.location.replace(data);
+        }).catch(function (err) {
+          console.log(err);
+        });
+      }
 
-    // Updating the input's state
-    this.setState({
-      [name]: value
-    });
-  };
+    validateForm() {
+        return this.state.username.length > 0 && this.state.password.length > 0;
+    }
 
-  handleFormSubmit = event => {
-    // Preventing the default behavior of the form submit (which is to refresh the page)
-    event.preventDefault();
+    handleChange = event => {
+        this.setState({
+            [event.target.id]: event.target.value
+        });
+    }
 
-    // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
-    alert(`Hello ${this.state.username}`);
-    this.setState({
-      username: ""
-    });
-  };
+    handleSubmit = async event => {
+        event.preventDefault();
+        this.loginUser(this.state.username, this.state.password);
+    }
 
-  render() {
-    // Notice how each input has a `value`, `name`, and `onChange` prop
-    return (
-      <div>
-        <p>
-          Hello {this.state.username} 
-        </p>
-        <form className="form">
-          <input
-            value={this.state.username}
-            name="username"
-            onChange={this.handleInputChange}
-            type="text"
-            placeholder="username"
-          />
-          <input
-            value={this.state.password}
-            name="password"
-            onChange={this.handleInputChange}
-            type="text"
-            placeholder="password"
-          />
-          <button onClick={this.handleFormSubmit}>Submit</button>
-        </form>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="Login">
+                <form onSubmit={this.handleSubmit}>
+                    <FormGroup controlId="username" bsSize="large">
+                        <FormLabel>Username</FormLabel>
+                        <FormControl
+                            value={this.state.username}
+                            onChange={this.handleChange}
+                            type="username"
+                        />
+                    </FormGroup>
+                    <FormGroup controlId="password" bsSize="large">
+                        <FormLabel>Password</FormLabel>
+                        <FormControl
+                            value={this.state.password}
+                            onChange={this.handleChange}
+                            type="password"
+                        />
+                    </FormGroup>
+                    <Button
+                        block
+                        bsSize="large"
+                        disabled={!this.validateForm()}
+                        type="submit">
+                        Login
+          </Button>
+                </form>
+            </div>
+        );
+    }
 }
-
-export default Login;

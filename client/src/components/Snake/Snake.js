@@ -4,7 +4,6 @@ import 'pixi';
 import 'p2';
 import Phaser from 'phaser';
 
-
 var snake;
 var food;
 var cursors;
@@ -45,11 +44,11 @@ var repositionFood = function () {
     }
 };
 
-var postScore = function(food) {
+var postScore = function(food, username) {
     API.saveScore({
         game: "Snake",
         score: food.total,
-        username: "username"
+        username: username
     })
     .catch(err => console.log(err));
 };
@@ -140,14 +139,11 @@ export default class Snake extends Component {
                         this.headPosition.y = Phaser.Math.Wrap(this.headPosition.y + 1, 0, 30);
                         break;
                 }
-
                 this.direction = this.heading;
                 Phaser.Actions.ShiftPosition(this.body.getChildren(), this.headPosition.x * 16, this.headPosition.y * 16, 1, this.tail);
                 var hitBody = Phaser.Actions.GetFirst(this.body.getChildren(), { x: this.head.x, y: this.head.y }, 1);
-
                 if (hitBody) {
                     this.alive = false;
-                    postScore(food);
                     return false;
                 }
                 else {
@@ -168,7 +164,6 @@ export default class Snake extends Component {
                     if (this.speed > 20 && food.total % 5 === 0) {
                         this.speed -= 5;
                     }
-
                     return true;
                 }
                 else {
@@ -194,6 +189,8 @@ export default class Snake extends Component {
 
     update(time, delta) {
         if (!snake.alive) {
+            this.scene.stop();
+            postScore(food, this.props.username)
             return;
         }
 
