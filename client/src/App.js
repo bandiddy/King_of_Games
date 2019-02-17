@@ -23,7 +23,38 @@ export default class App extends Component {
       <Router>
         <div>
           <Header />
-         <Login username={this.state.username} email={this.state.email} password={this.state.password} />
+          <Navbar />
+
+          <Route exact path="/" />
+          <Route
+            path='/breakout'
+            username = {this.state.username}
+            name="Breakout"
+            render={(props) => <Breakout />}
+          />
+          <Route
+            path='/snake'
+            username = {this.state.username}
+            name="Snake"
+            render={(props) => <Snake />}
+          />
+          <Route
+            path='/racer'
+            username = {this.state.username}
+            name="Racer"
+            render={(props) => <Racer />}
+          />
+          <Wrapper>
+            <TopScoreCard/>
+            {this.state.games.map(game => (
+              <GameCard
+                id={game.id}
+                key={game.id}
+                name={game.name}
+                image={game.image}
+              />
+            ))}
+          </Wrapper>
           <Footer />
         </div>
       </Router>
