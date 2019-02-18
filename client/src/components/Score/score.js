@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Score.css";
 import API from "../../utils/API"
-​
+
 export default class Score extends React.Component {
   constructor(props) {
     super(props);
