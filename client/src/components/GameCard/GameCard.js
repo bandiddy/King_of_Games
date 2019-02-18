@@ -10,7 +10,7 @@ export default class GameCard extends React.Component {
       <div className="card">
         <GameImage name={this.props.name} image={this.props.image} />
         <div className="content">
-            <h2>Game: {this.props.name}</h2>
+            <h2 class="text-center">Game: {this.props.name}</h2>
             <Score name={this.props.name}/>
         </div>
       </div>

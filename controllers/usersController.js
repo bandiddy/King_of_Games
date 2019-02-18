@@ -1,17 +1,17 @@
 const db = require("../models");
+const passport = require("passport");
 
 module.exports = {
-    findAll: function(req, res){
-        db.User
-        .findAll({})
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
-    },
-    create: function(req, res){
-        db.User
-        .create(req.username, req.password)
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err))
-    },
-};
-
+    createUser: function(req, res){
+        db.User.create({
+            email: req.body.email,
+            username: req.body.username,
+            password: req.body.password
+        }).then(function () {
+            res.redirect(307, "/");
+        }).catch(function (err) {
+            console.log(err);
+            res.json(err);
+        });
+    }
+}

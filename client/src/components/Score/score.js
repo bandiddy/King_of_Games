@@ -3,6 +3,7 @@ import "./Score.css";
 import API from "../../utils/API"
 
 export default class Score extends React.Component {
+<<<<<<< HEAD
   constructor(props) {
     super(props);
     this.state = {

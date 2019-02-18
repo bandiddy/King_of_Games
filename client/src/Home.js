@@ -8,23 +8,18 @@ import TopScoreCard from "./components/TopScoreCard/TopScoreCard";
 import Snake from "./components/Snake/Snake";
 import Breakout from "./components/Breakout/Breakout";
 //import Tower from "./components/Towerdefense/Towerdefense";
-import Racer from "./components/Racer/Racer";
+import Racer from "./components/Racer";
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Modal from './components/Modal/Modal';;
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-  this.state = {
+  state = {
     games,
     username: "",
-    email: "",
     password: ""
   };
-};
-
 
   render() {
     return (
@@ -32,7 +27,7 @@ export default class App extends Component {
         <div>
           <Header />
           <Navbar />
-         <Modal username={this.state.username} email={this.state.email} password={this.state.password} />
+
           <Route exact path="/" />
           <Route
             path='/breakout'

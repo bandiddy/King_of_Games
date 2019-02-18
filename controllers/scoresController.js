@@ -13,7 +13,10 @@ module.exports = {
   },
   findAllByGame: function(req, res) {
     db.Score
-      .findAll({where: {game:req.params.game}})
+      .findAll({where: {game:req.params.game},
+      order: [
+        ['score', 'DESC']
+      ]})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -25,7 +28,11 @@ module.exports = {
   },
   create: function (req, res) {
     db.Score
-      .create(req.body)
+      .create({
+        game: req.body.game,
+        score: req.body.score,
+        username: req.body.username
+      })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -41,5 +48,5 @@ module.exports = {
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-  }
+  },
 };
