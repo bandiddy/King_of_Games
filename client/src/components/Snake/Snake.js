@@ -4,10 +4,6 @@ import 'pixi';
 import 'p2';
 import Phaser from 'phaser';
 
-<<<<<<< HEAD
-=======
-var username;
->>>>>>> e8a21fa9ea62dd14ab4e7b02a61178f5d3fffbcf
 var snake;
 var food;
 var cursors;
@@ -48,11 +44,7 @@ var repositionFood = function () {
     }
 };
 
-<<<<<<< HEAD
 var postScore = function(food, username) {
-=======
-var postScore = function (food, username) {
->>>>>>> e8a21fa9ea62dd14ab4e7b02a61178f5d3fffbcf
     API.saveScore({
         game: "Snake",
         score: food.total,
