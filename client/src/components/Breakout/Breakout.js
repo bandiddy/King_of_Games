@@ -46,11 +46,11 @@ var hitPaddle = function (ball, paddle) {
     }
 };
 
-var postScore = function (score) {
+var postScore = function (score, username) {
     API.saveScore({
         game: "Breakout",
         score: score,
-        username: "username"
+        username: username
     })
         .catch(err => console.log(err));
 };
@@ -107,7 +107,7 @@ export default class Breakout extends Component {
                 if (lives > 0)
                     resetBall(this.ball, this.paddle);
                 if (lives === 0) {
-                    postScore(score);
+                    postScore(score, "test");
                 }
             }
         }

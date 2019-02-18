@@ -18,5 +18,11 @@ export default {
   },
   saveScore: function(scoreData) {
     return axios.post("/api/scores", scoreData);
+  },
+  loginUser: function(userData) {
+    return axios.post("/api/users/login", userData);
+  },
+  createUser: function(userData) {
+    return axios.post("/api/users/createUser", userData);
   }
 };
