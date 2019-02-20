@@ -4,6 +4,7 @@ import 'pixi';
 import 'p2';
 import Phaser from 'phaser';
 
+var username;
 var snake;
 var food;
 var cursors;
@@ -51,14 +52,13 @@ var postScore = function(food, username) {
         username: username
     })
         .catch(err => console.log(err));
-};
-
+}
 
 
 export default class Snake extends Component {
-    componentDidMount() {
-        username = this.props.username
-    }
+    constructor(props) {
+        super(props);
+    };
 
     preload() {
         this.load.image('food', 'assets/food.png');
@@ -194,11 +194,7 @@ export default class Snake extends Component {
     update(time, delta) {
         if (!snake.alive) {
             this.scene.stop();
-<<<<<<< HEAD
-            postScore(food, this.props.username)
-=======
-            postScore(food, username);
->>>>>>> e8a21fa9ea62dd14ab4e7b02a61178f5d3fffbcf
+            postScore(food, this.props.username);
             return;
         }
 
@@ -226,7 +222,6 @@ export default class Snake extends Component {
     componentDidMount() {
         const width = 640;
         const height = 480;
-
         const renderOptions = {
             width,
             height,
@@ -244,7 +239,6 @@ export default class Snake extends Component {
                 update: this.update
             }
         };
-
         this.game = new Phaser.Game(renderOptions);
     }
 

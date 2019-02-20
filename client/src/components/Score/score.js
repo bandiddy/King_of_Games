@@ -31,7 +31,6 @@ export default class Score extends React.Component {
       }
     
     render() {
-      console.log(this.state.scores);
         return (
             <ul>
                 {this.state.scores.map(score => (
