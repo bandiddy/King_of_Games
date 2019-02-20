@@ -194,11 +194,7 @@ export default class Snake extends Component {
     update(time, delta) {
         if (!snake.alive) {
             this.scene.stop();
-<<<<<<< HEAD
-            postScore(food, this.props.username)
-=======
             postScore(food, username);
->>>>>>> e8a21fa9ea62dd14ab4e7b02a61178f5d3fffbcf
             return;
         }
 
