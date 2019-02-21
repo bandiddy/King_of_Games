@@ -12,7 +12,8 @@ import Racer from "../Racer";
 import Header from '../Header/Header';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
-import Modal from '../Modal/Modal';;
+import Modal from '../Modal/Modal';
+import KOGScoreCard from '../KOGScoreCard'
 
 export default class Home extends Component {
     constructor(props) {
@@ -22,7 +23,7 @@ export default class Home extends Component {
     componentDidMount() {
         console.log(this.props);
     }
-    
+
     render() {
         return (
             <Router>
@@ -34,20 +35,25 @@ export default class Home extends Component {
                     <Route
                         path='/breakout'
                         name="Breakout"
-                        handler = {this.handler}
-                        render={(props) => <Breakout handler = {this.handler}/>}
+                        handler={this.handler}
+                        render={(props) => <Breakout handler={this.handler} />}
                     />
                     <Route
                         path='/snake'
                         name="Snake"
-                        handler = {this.handler}
-                        render={(props) => <Snake handler = {this.handler}/>}
+                        handler={this.handler}
+                        render={(props) => <Snake handler={this.handler} />}
                     />
                     <Route
                         path='/racer'
                         name="Racer"
-                        handler = {this.handler}
-                        render={(props) => <Racer handler = {this.handler}/>}
+                        handler={this.handler}
+                        render={(props) => <Racer handler={this.handler} />}
+                    />
+                    <Route
+                        path='/topscore'
+                        name="KOGScoreCard"
+                        render={(props) => <KOGScoreCard />}
                     />
                     <Wrapper>
                         <TopScoreCard />
