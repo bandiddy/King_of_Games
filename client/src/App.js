@@ -15,7 +15,7 @@ export default class App extends Component {
         password:""
       }
     }
-  }
+  
 
   onChange(field, value) {
     this.setState({[field]: value});
@@ -50,3 +50,4 @@ export default class App extends Component {
       </Router>
     );
   }
+}
