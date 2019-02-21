@@ -12,7 +12,7 @@ export default class Login extends Component {
     onFieldChange = event => {
         const fieldName = event.target.name;
         const fieldValue = event.target.value;
-        this.props.onChange(fieldName, fieldValue);
+        // this.props.onChange(fieldName, fieldValue);
     }
 
     handleSubmit = async event => {
@@ -60,6 +60,7 @@ export default class Login extends Component {
                         />
                     </FormGroup>
                     <Button
+                        href ="/home"
                         block
                         bsSize="large"
                         type="submit">
