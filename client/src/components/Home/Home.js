@@ -34,20 +34,20 @@ export default class Home extends Component {
                     <Route
                         path='/breakout'
                         name="Breakout"
-                        username = {this.props.username}
-                        render={(props) => <Breakout username = {this.props.username}/>}
+                        handler = {this.handler}
+                        render={(props) => <Breakout handler = {this.handler}/>}
                     />
                     <Route
                         path='/snake'
                         name="Snake"
-                        username = {this.props.username}
-                        render={(props) => <Snake username = {this.props.username}/>}
+                        handler = {this.handler}
+                        render={(props) => <Snake handler = {this.handler}/>}
                     />
                     <Route
                         path='/racer'
                         name="Racer"
-                        username = {this.props.username}
-                        render={(props) => <Racer username = {this.props.username}/>}
+                        handler = {this.handler}
+                        render={(props) => <Racer handler = {this.handler}/>}
                     />
                     <Wrapper>
                         <TopScoreCard />

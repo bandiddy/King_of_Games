@@ -6,7 +6,7 @@ export default class TopScoreCard extends React.Component {
     render() {
         return(
             <div className="TScard">
-                <TopScore username={this.props.username} score={this.props.score}/>
+                <TopScore handler = {this.handler} score={this.props.score}/>
             </div>
         )
     }
