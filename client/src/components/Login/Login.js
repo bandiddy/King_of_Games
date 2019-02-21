@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import "./Login.css";
 import API from "../../utils/API";
-import Axios from "axios";
 
 export default class Login extends Component {
     constructor(props) {
@@ -13,36 +12,20 @@ export default class Login extends Component {
         };
     }
 
-    loginUser(username, password) {
-        Axios.post("/api/users/login", {
-          username: username,
-          password: password
-        }).then(function (data) {
-          window.location.replace(data);
-        }).catch(function (err) {
-          console.log(err);
-        });
-      }
-
-    validateForm() {
-        return this.state.username.length > 0 && this.state.password.length > 0;
-    }
-
     handleChange = event => {
         this.setState({
-            [event.target.id]: event.target.value
+          [event.target.id]: event.target.value
         });
-    }
-
-    handleSubmit = async event => {
-        event.preventDefault();
-        this.loginUser(this.state.username, this.state.password);
+      }
+      
+    validateForm() {
+        return this.state.username.length > 0 && this.state.password.length > 0;
     }
 
     render() {
         return (
             <div className="Login">
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.props.handleSubmit}>
                     <FormGroup controlId="username" bsSize="large">
                         <FormLabel>Username</FormLabel>
                         <FormControl

@@ -14,46 +14,44 @@ import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import Modal from '../Modal/Modal';;
 
-export default class App extends Component {
+export default class Home extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            games,
-            username: "",
-            email: "",
-            password: ""
-        };
-    }
+    };
 
+    componentDidMount() {
+        console.log(this.props);
+    }
+    
     render() {
         return (
             <Router>
                 <div>
                     <Header />
                     <Navbar />
-                    <Modal username={this.state.username} email={this.state.email} password={this.state.password} />
+                    <Modal username={this.props.username} email={this.props.email} password={this.props.password} />
                     <Route exact path="/" />
                     <Route
                         path='/breakout'
                         name="Breakout"
-                        username = {this.state.username}
-                        render={(props) => <Breakout username = {this.state.username}/>}
+                        username = {this.props.username}
+                        render={(props) => <Breakout username = {this.props.username}/>}
                     />
                     <Route
                         path='/snake'
                         name="Snake"
-                        username = {this.state.username}
-                        render={(props) => <Snake username = {this.state.username}/>}
+                        username = {this.props.username}
+                        render={(props) => <Snake username = {this.props.username}/>}
                     />
                     <Route
                         path='/racer'
                         name="Racer"
-                        username = {this.state.username}
-                        render={(props) => <Racer username = {this.state.username}/>}
+                        username = {this.props.username}
+                        render={(props) => <Racer username = {this.props.username}/>}
                     />
                     <Wrapper>
                         <TopScoreCard />
-                        {this.state.games.map(game => (
+                        {games.map(game => (
                             <GameCard
                                 id={game.id}
                                 key={game.id}
