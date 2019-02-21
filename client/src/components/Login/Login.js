@@ -4,13 +4,7 @@ import "./Login.css";
 import API from "../../utils/API";
 
 export default class Login extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            username: "",
-            password: ""
-        };
-    }
+
 
     handleChange = event => {
         this.setState({

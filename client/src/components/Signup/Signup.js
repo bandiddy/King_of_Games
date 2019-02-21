@@ -9,16 +9,7 @@ import "./Signup.css";
 import API from "../../utils/API";
 
 export default class Signup extends Component {
-    constructor(props) {
-        super(props);
 
-        this.state = {
-            email: "",
-            username: "",
-            password: "",
-            newUser: null
-        };
-    }
 
     validateForm() {
         return (
