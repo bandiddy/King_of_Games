@@ -14,6 +14,7 @@ import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import Modal from '../Modal/Modal';
 import KOGScoreCard from '../KOGScoreCard'
+import HomeCard from '../HomeCard';
 
 export default class Home extends Component {
     constructor(props) {
@@ -31,7 +32,14 @@ export default class Home extends Component {
                     <Header />
                     <Navbar />
                     <Modal username={this.props.username} email={this.props.email} password={this.props.password} />
-                    <Route exact path="/" />
+                    <Route exact path="/"
+                        name="home"
+                        render={(props) => <HomeCard />}
+                         />
+                      <Route exact path="/home"
+                        name="home"
+                        render={(props) => <HomeCard />}
+                         />
                     <Route
                         path='/breakout'
                         name="Breakout"
@@ -53,11 +61,12 @@ export default class Home extends Component {
                     <Route
                         path='/topscore'
                         name="KOGScoreCard"
-                        render={(props) => <KOGScoreCard />}
+                        render={(props) => <KOGScoreCard />
+
+                        }
                     />
 
                     <Wrapper>
-                        <TopScoreCard />
                         {games.map(game => (
                             <GameCard
                                 id={game.id}
