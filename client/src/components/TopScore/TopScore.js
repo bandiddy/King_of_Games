@@ -8,7 +8,7 @@ export default class TopScore extends React.Component {
         return(
             <div className="TopScores">
                 <h1>Top Scores:</h1>
-                <Score username={this.props.username} score={this.props.score} />
+                <Score handler={this.handler} score={this.props.score} />
             </div>
         )
     }

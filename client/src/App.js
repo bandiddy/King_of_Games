@@ -49,19 +49,15 @@ export default class App extends Component {
 
           <Route exact path="/" 
             render={(props) => <Login
-              // handleSubmit={this.handleSubmit.bind(this)}
+              handleSubmit={this.handleSubmit}
               handler = {this.handler} />}
           />
           <Route path="/signup" component={Signup} />
           <Route
             path='/home'
-            // email={this.state.email}
-            // username={this.state.username}
-            // password={this.state.password}
+
             render={(props) => <Home
-              email={this.state.email}
-              username={this.state.username}
-              password={this.state.password} />}
+              handler = {this.handler} />}
           />
         </div>
       </Router>

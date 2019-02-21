@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import "./Login.css";
+import { Route } from 'react-router-dom';
 import API from "../../utils/API";
+import Home from "../Home/Home";
 
 export default class Login extends Component {
 
@@ -36,10 +38,11 @@ export default class Login extends Component {
                         block
                         bsSize="large"
                         // disabled={!this.validateForm()}
-                        onClick = {this.handler}
+                        onClick ={this.props.handler}
                         type="submit">
                         Login
           </Button>
+        
                 </form>
             </div>
         );
