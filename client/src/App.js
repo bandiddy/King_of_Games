@@ -10,15 +10,11 @@ export default class App extends Component {
     constructor(props) {
       super(props)
   
-      this.handler = this.handler.bind(this)
-    };
-  
-    handler() {
-      this.setState({
+      this.state = {
         email:"",
         username:"",       
         password:""
-      })
+      }
     }
   // handleSubmit = async event => {
   //   event.preventDefault();
