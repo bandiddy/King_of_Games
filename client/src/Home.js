@@ -12,7 +12,10 @@ import Racer from "./components/Racer";
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
-import Modal from './components/Modal/Modal';;
+import Modal from './components/Modal/Modal';
+import KOGScoreCard from './components/KOGScoreCard';
+import KOGScore from './components/KOGScore'
+;
 
 export default class App extends Component {
   state = {
@@ -43,6 +46,11 @@ export default class App extends Component {
             path='/racer'
             name="Racer"
             render={(props) => <Racer />}
+          />
+          <Route
+            path='/topscore'
+            name="KOGScoreCard"
+            render={(props) => <KOGScoreCard />}
           />
           <Wrapper>
             <TopScoreCard/>
