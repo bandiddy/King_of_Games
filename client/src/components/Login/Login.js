@@ -1,45 +1,70 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import "./Login.css";
-import API from "../../utils/API";
+import axios from "axios";
+
 
 export default class Login extends Component {
+    constructor(props) {
+        super(props);
+    }
 
+    onFieldChange = event => {
+        const fieldName = event.target.name;
+        const fieldValue = event.target.value;
+        this.props.onChange(fieldName, fieldValue);
+    }
 
-
-      
-    // validateForm() {
-    //     return this.props.username.length > 0 && this.props.password.length > 0;
-    // }
+    handleSubmit = async event => {
+        event.preventDefault();
+        var userData = {
+            username: this.props.username,
+            password: this.props.password
+        };
+        if (!userData.username || !userData.password) {
+        return;
+        }
+        this.loginUser(userData.username, userData.password);
+        console.log(this.props.username);
+    }
+    
+    loginUser(u, p) {
+        axios.post("/api/users/login", {
+            username: u,
+            password: p
+        }).then(function (data) {
+            window.location.replace(data);
+        }).catch(function (err) {
+            console.log(err);
+        });
+    }
 
     render() {
         return (
             <div className="Login">
-                <form onSubmit={this.props.handleSubmit}>
+                <form onSubmit={this.handleSubmit}>
                     <FormGroup controlId="username" bsSize="large">
                         <FormLabel>Username</FormLabel>
                         <FormControl
-                            value={this.props.username}
-                            onChange={this.handleChange}
+                            name="username"
+                            onChange={this.onFieldChange.bind(this)}
                             type="username"
                         />
                     </FormGroup>
                     <FormGroup controlId="password" bsSize="large">
                         <FormLabel>Password</FormLabel>
                         <FormControl
-                            value={this.props.password}
-                            onChange={this.handleChange}
+                            name="password"
+                            onChange={this.onFieldChange.bind(this)}
                             type="password"
                         />
                     </FormGroup>
                     <Button
                         block
                         bsSize="large"
-                        // disabled={!this.validateForm()}
-                        onClick = {this.handler}
                         type="submit">
                         Login
-          </Button>
+                    </Button>
                 </form>
             </div>
         );
