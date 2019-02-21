@@ -62,6 +62,7 @@ export default class Signup extends Component {
                         />
                     </FormGroup>
                     <Button
+                        href="/"
                         block
                         bsSize="large"
                         // disabled={!this.validateForm()}
