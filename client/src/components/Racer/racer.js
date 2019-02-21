@@ -47,7 +47,7 @@ var hitCar = (player, traffic, hasCrashed) => {
     if (carHP === 0) {
         hasCrashed = true;
         gameOver.setText('You Crashed');
-        postScore(score);
+        //postScore(score);
 
     }
 
