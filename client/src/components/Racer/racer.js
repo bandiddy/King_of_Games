@@ -61,14 +61,14 @@ var scoreCounter = (time, hasCrashed) => {
    }
  };
 
- var postScore = function(food) {
-    API.saveScore({
-        game: "Racer",
-        score: score,
-        username: "username"
-    })
-    .catch(err => console.log(err));
-};
+//  var postScore = function(food) {
+//     API.saveScore({
+//         game: "Racer",
+//         score: score,
+//         username: "username"
+//     })
+//     .catch(err => console.log(err));
+// };
 
 class Racer extends Component {
     game = {};
