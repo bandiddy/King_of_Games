@@ -4,36 +4,19 @@ import './App.css';
 import Signup from './components/Signup/Signup';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login'
-import axios from "axios";
 
 export default class App extends Component {
-    constructor(props) {
-      super(props)
-  
-      this.handler = this.handler.bind(this)
-    };
-  
-    handler() {
-      this.setState({
-        email:"",
-        username:"",       
-        password:""
-      })
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: "",
+      email: "",
+      password: ""
     }
-  // handleSubmit = async event => {
-  //   event.preventDefault();
-  //   this.loginUser(this.state.username, this.state.password);
-  // }
+  }
 
-  loginUser(username, password) {
-    axios.post("/api/users/login", {
-      username: username,
-      password: password
-    }).then(function (data) {
-      window.location.replace(data);
-    }).catch(function (err) {
-      console.log(err);
-    });
+  onChange(field, value) {
+    this.setState({[field]: value});
   }
 
   render() {
@@ -49,8 +32,10 @@ export default class App extends Component {
 
           <Route exact path="/" 
             render={(props) => <Login
-              handleSubmit={this.handleSubmit}
-              handler = {this.handler} />}
+              onChange={this.onChange.bind(this)}
+              email={this.state.email}
+              username={this.state.username}
+              password={this.state.password} />}
           />
           <Route path="/signup" component={Signup} />
           <Route
