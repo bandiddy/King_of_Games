@@ -6,14 +6,16 @@ import Home from './components/Home/Home';
 import Login from './components/Login/Login'
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      username: "",
-      email: "",
-      password: ""
+    constructor(props) {
+      super(props)
+  
+      this.state = {
+        email:"",
+        username:"",       
+        password:""
+      }
     }
-  }
+  
 
   onChange(field, value) {
     this.setState({[field]: value});

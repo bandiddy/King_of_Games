@@ -21,12 +21,7 @@ export default class Navbar extends React.Component {
             "nav-link active" : "nav-link"
           }>SNAKE
         </Link>
-        <Link
-          to="/towerdefense"
-          className={
-            window.location.pathname === "/towerdefense" ? 
-            "nav-link active" : "nav-link"}>TOWER DEFENSE
-        </Link>
+      
         <Link to="/racer"
           className={
             window.location.pathname === "/racer" ? 
@@ -34,8 +29,8 @@ export default class Navbar extends React.Component {
         </Link>
         <Link to="/topscore"
           className={
-            window.location.pathname === "/topscore" ?
-            "nav-link active" : "nav-link"}>TOP SCORE
+            window.location.pathname === "/kog" ?
+            "nav-link active" : "nav-link"}>KING OF GAMES
         </Link>
       </nav>
     )
