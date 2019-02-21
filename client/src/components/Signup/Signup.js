@@ -11,12 +11,9 @@ import API from "../../utils/API";
 export default class Signup extends Component {
 
 
-    validateForm() {
-        return (
-            this.state.email.length > 0 &&
-            this.state.password.length > 0 
-        );
-    }
+    // validateForm() {
+    //     return this.props.username.length > 0 && this.props.password.length > 0 && this.props.email.length > 0;
+    // }
 
     handleChange = event => {
         this.setState({
@@ -27,9 +24,9 @@ export default class Signup extends Component {
     handleSubmit = async event => {
         event.preventDefault();
         var userData = {
-            email: this.state.email,
-            username: this.state.username,
-            password: this.state.password,
+            email: this.props.email,
+            username: this.props.username,
+            password: this.props.password,
         };
         API.createUser(userData);
     }
@@ -43,7 +40,7 @@ export default class Signup extends Component {
                         <FormControl
                             autoFocus
                             type="email"
-                            value={this.state.email}
+                            value={this.props.email}
                             onChange={this.handleChange}
                         />
                     </FormGroup>
@@ -52,14 +49,14 @@ export default class Signup extends Component {
                         <FormControl
                             autoFocus
                             type="username"
-                            value={this.state.username}
+                            value={this.props.username}
                             onChange={this.handleChange}
                         />
                     </FormGroup>
                     <FormGroup controlId="password" bsSize="large">
                         <FormLabel>Password</FormLabel>
                         <FormControl
-                            value={this.state.password}
+                            value={this.props.password}
                             onChange={this.handleChange}
                             type="password"
                         />
@@ -67,7 +64,7 @@ export default class Signup extends Component {
                     <Button
                         block
                         bsSize="large"
-                        disabled={!this.validateForm()}
+                        // disabled={!this.validateForm()}
                         type="submit">
                         Signup
                     </Button>
