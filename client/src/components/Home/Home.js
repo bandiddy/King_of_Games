@@ -9,7 +9,7 @@ import Snake from "../Snake/Snake";
 import Breakout from "../Breakout/Breakout";
 //import Tower from "../Towerdefense/Towerdefense";
 import Racer from "../Racer";
-import Header from '../Header/Header';
+import Header from '../header/header';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import Modal from '../Modal/Modal';
